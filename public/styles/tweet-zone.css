@@ -1,0 +1,65 @@
+#tweet-zone .tweet {
+    background-color: #ffffff;
+    border-color: gray;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    height: 200px;
+    position: relative;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#tweet-zone .tweet header {
+  background-color: #eeeeee;
+  height: 65px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px
+}
+
+#tweet-zone img {
+  margin: 5px;
+  float: left;
+  border-radius: 5px;
+}
+
+#tweet-zone header .username {
+  font-weight: 700;
+  font-size: x-large;
+  float: left;
+  line-height: 45px;
+}
+
+#tweet-zone header .handle {
+  float: right;
+  line-height: 45px;
+  padding-right: 5px;
+  color: #b0b0b0;
+}
+
+#tweet-zone .message-border {
+  height: 95px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+#tweet-zone .message {
+  color: black;
+  padding: 1em;
+}
+
+#tweet-zone footer {
+  font-size: x-small;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.tweet-symbols{
+  padding: 3px;
+  position: relative;
+  float: right;
+}
