@@ -79,6 +79,7 @@ $( document ).ready(function() {
 
   $( '#nav-bar .compose' ).click(function() {
     $( '.new-tweet' ).slideToggle("fast");
+    $( '.new-tweet textarea').focus();
   })
 
   loadTweets()
