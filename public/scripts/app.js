@@ -1,3 +1,5 @@
+
+
 function loadTweets() {
   $.ajax({
     url: 'http://localhost:8080/tweets',
@@ -9,7 +11,6 @@ function loadTweets() {
 
 
 function renderTweets(arr) {
-  //debugger;
   const tweetsArray = arr;
   console.log(tweetsArray);
   $( '#tweet-zone').empty();
@@ -27,14 +28,12 @@ function renderTweets(arr) {
 
   let hearts = 0;
   $( '.fa-heart').click(function() {
-    // debugger;
     hearts++;
     $(this).closest( 'footer' ).find( '.hearts' ).html(hearts);
   });
 
   let retweets = 0;
   $( '.fa-retweet').click(function() {
-    // debugger;
     retweets++;
     $(this).closest( 'footer' ).find( '.retweets' ).html(retweets);
   });
@@ -71,20 +70,18 @@ function createTweetElement(tweets) {
   return $tweet;
 }
 
-//////////////////
-//////////////////
+//////ON///////////
+//////DOCUMENT/////
+//////READY////////
+
 
 $( document ).ready(function() {
-
-
-  loadTweets()
-
 
   $( '#nav-bar .compose' ).click(function() {
     $( '.new-tweet' ).slideToggle("fast");
   })
 
-
+  loadTweets()
 
 
   $( '.container .new-tweet form').on("submit", function( event ) {
@@ -110,6 +107,7 @@ $( document ).ready(function() {
               //----ajax----\\
         }
       })
+
     }
   })
 });

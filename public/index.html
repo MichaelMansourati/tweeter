@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
@@ -39,6 +41,7 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
+
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" width="80px" height="80px">
       <span class="header">Tweeter</span>
@@ -46,29 +49,23 @@
     </nav>
 
     <!-- Page-specific (main) content here -->
+
     <main class="container">
+
       <section class="new-tweet">
+
         <h2>Compose Tweet</h2>
+
         <form method="POST" action="/tweets">
           <textarea name="text" placeholder="What are you humming about?"></textarea>
           <input type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
+
       </section>
+
       <section id="tweet-zone">
-        <article class="tweet">
-          <header>
-            <img src="/images/bird.png" width="55px" height="55px">
-            <span class="username">tweetboy</span>
-            <span class="handle">@thedongus</span>
-          </header>
-          <div class="message-border">
-            <p class="message">aaaaahhhhhhHHHHHHH</br>rrr</p>
-          </div>
-          <footer>
-            <span>don't even</span>
-          </footer>
-        </article>
+        <! -- tweets will go in here -- >
       </section>
 
     </main>
