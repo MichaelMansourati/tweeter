@@ -17,17 +17,31 @@ function renderTweets(arr) {
     const tweetElement = createTweetElement(tweet);
     $('#tweet-zone').prepend(tweetElement);
   })
-  // for (tweet of tweetsArray) {
-  //   $( '#tweet-zone' ).prepend(createTweetElement(tweet)[0]);
 
-  //   console.log(createTweetElement(tweet)[0].innerHTML)
 
-    $( '.tweet' ).hover(function() {
-    $('.tweet-symbols').fadeToggle('fast');
-  })
-}   // loops through tweets
-      // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
+  //the fun stuff
+
+  $( '.tweet' ).hover(function() {
+    $(this).find('.tweet-symbols').fadeToggle('fast');
+  });
+
+  let hearts = 0;
+  $( '.fa-heart').click(function() {
+    // debugger;
+    hearts++;
+    $(this).closest( 'footer' ).find( '.hearts' ).html(hearts);
+  });
+
+  let retweets = 0;
+  $( '.fa-retweet').click(function() {
+    // debugger;
+    retweets++;
+    $(this).closest( 'footer' ).find( '.retweets' ).html(retweets);
+  });
+
+  //end of the fun stuff
+
+}
 
 
 
@@ -44,20 +58,24 @@ function createTweetElement(tweets) {
     <p class="message">${tweets.content.text}</p>
     </div>
     <footer>
-      <span>${new Date(tweets.created_at)}</span>
+      <span class="tweet-date">${new Date(tweets.created_at)}</span>
       <i class="tweet-symbols fa fa-flag"></i>
-      <i class="tweet-symbols fa fa-retweet" aria-hidden="true"></i>
-      <i class="tweet-symbols fa fa-heart" aria-hidden="true"></i>
+      <i class="tweet-symbols fa fa-retweet" aria-hidden="true" >
+      <span class="retweets"></span></i>
+      <i class="tweet-symbols fa fa-heart" aria-hidden="true" >
+      <span class="hearts"></span></i>
     </footer>`;
 
   let $tweet = $('<article>').addClass('tweet').html(tweetShape);
 
-
-
   return $tweet;
 }
 
+//////////////////
+//////////////////
+
 $( document ).ready(function() {
+
 
   loadTweets()
 
@@ -66,13 +84,6 @@ $( document ).ready(function() {
     $( '.new-tweet' ).slideToggle("fast");
   })
 
-  $( '#nav-bar .compose' ).hover(function() {
-    $('.tweet-symbols').fadeToggle('fast');
-  })
-
-  // $( '#tweet-zone .tweet' ).hover(function() {
-  //   console.log('hovered');
-  // })
 
 
 

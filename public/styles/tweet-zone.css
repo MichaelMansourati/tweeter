@@ -53,13 +53,25 @@
   padding-left: 5px;
   padding-bottom: 5px;
   padding-top: 5px;
-  position: absolute;
   bottom: 0;
   left: 0;
 }
 
-.tweet-symbols{
-  padding: 3px;
+.tweet-symbols {
+  margin-left: 15px;
   position: relative;
+  float: right;
+  font-size: small;
+  display: none;
+}
+.fa-flag {
+  margin-right: 10px;
+}
+
+.hearts {
+  float: right;
+}
+
+.retweets {
   float: right;
 }
