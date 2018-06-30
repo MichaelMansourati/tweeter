@@ -12,11 +12,8 @@ function loadTweets() {
 
 function renderTweets(arr) {
   const tweetsArray = arr;
-  console.log(tweetsArray);
-  $( '#tweet-zone').empty();
-  tweetsArray.forEach(function (tweet) {
-    const tweetElement = createTweetElement(tweet);
-    $('#tweet-zone').prepend(tweetElement);
+  tweetsArray.forEach(function(tweet) {
+    $('#tweet-zone').prepend(createTweetElement(tweet));
   })
 
 
@@ -76,39 +73,33 @@ function createTweetElement(tweets) {
 
 
 $( document ).ready(function() {
-
   $( '#nav-bar .compose' ).click(function() {
     $( '.new-tweet' ).slideToggle("fast");
-    $( '.new-tweet textarea').focus();
+    $( '.new-tweet textarea' ).focus();
+    $( "#error-message").text('');
   })
 
-  loadTweets()
+  loadTweets();
 
 
   $( '.container .new-tweet form').on("submit", function( event ) {
     event.preventDefault();
-
     if ($( '.container .new-tweet textarea').val().length > 140) {
-
-      alert("write a shorter tweet");
-
+      $( "#error-message").text("Your tweet exceeds the maximum character limit.");
     } else if ($( '.container .new-tweet textarea').val() === '') {
-
-      alert("write a longer tweet");
-
+      $( "#error-message").text("Your tweet must include at least on character.");
     } else {
-              //----ajax----\\
       $.ajax({
         url:'http://localhost:8080/tweets',
         type:'POST',
         data: $( 'textarea' ).serialize(),
         success: function(response) {
-          loadTweets();
+          console.log(response)
+          $('#tweet-zone').prepend(createTweetElement(response));
           $( 'textarea' ).val('');
-              //----ajax----\\
         }
       })
-
+      $( "#error-message").text('');
     }
   })
 });
