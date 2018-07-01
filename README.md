@@ -4,7 +4,7 @@ A single-page AJAX-based Twitter clone that uses jQuery, HTML5 and CSS3.
 
 ## Preview
 
-![Tweeter preview](./docs/tweeter.png)
+![Tweeter preview](./docs/tweeter.gif)
 
 ## Getting Started
 
